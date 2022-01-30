@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useEffect } from 'react';
 
 // reactstrap components
-import { Card, CardBody, CardTitle } from "reactstrap";
+import { Card, CardBody, CardTitle } from 'reactstrap';
 
 // Core Components
 
 function BlogCard13() {
+  useEffect(() => {
+    fetch('https://fakestoreapi.com/products')
+      .then((res) => res.json())
+      .then((json) => console.log(json));
+  });
   return (
     <>
       <Card className="card-blog" data-header="pattern">
@@ -13,7 +18,7 @@ function BlogCard13() {
           <img
             alt="..."
             className="img pattern rounded"
-            src={require("assets/img/ill/presentation_bg.png")}
+            src={require('assets/img/ill/presentation_bg.png')}
           ></img>
         </a>
         <CardBody>
